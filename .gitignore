@@ -10,6 +10,14 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
+
+/target
+.springBeans
+.classpath
+.project
+.settings
+*.prefs
+
 # Package Files #
 *.jar
 *.war
