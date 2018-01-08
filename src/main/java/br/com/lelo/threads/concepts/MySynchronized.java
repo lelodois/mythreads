@@ -1,6 +1,8 @@
 package br.com.lelo.threads.concepts;
 
-class MySynchronizedApp {
+import br.com.lelo.threads.commons.MyThreadUtils;
+
+class MySynchronizedProcessor {
 
 	private int count = 0;
 
@@ -22,11 +24,7 @@ class MySynchronizedApp {
 			}
 		});
 
-		firstThread.start();
-		secondThread.start();
-
-		firstThread.join();
-		secondThread.join();
+		MyThreadUtils.startAndJoin(firstThread, secondThread);
 
 		System.out.println("Count is: " + count);
 	}
@@ -34,6 +32,6 @@ class MySynchronizedApp {
 
 public class MySynchronized {
 	public static void main(String[] args) throws InterruptedException {
-		new MySynchronizedApp().doWork();
+		new MySynchronizedProcessor().doWork();
 	}
 }
